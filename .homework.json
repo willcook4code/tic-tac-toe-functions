@@ -1,0 +1,17 @@
+{
+    "name": "tic-tac-toe-functions",
+    "version": "0.0.1",
+    "title": "Tic-Tac-Toe with Functions",
+    "description": "Implement the functions for a tic tac toe game",
+    "difficultyModes": [
+        "Normal"
+    ],
+    "keywords": [
+        "Functions",
+        "JavaScript",
+        "Tic-Tac-Toe"
+    ],
+    "supplementalFiles": [
+        "package.json"
+    ]
+}
