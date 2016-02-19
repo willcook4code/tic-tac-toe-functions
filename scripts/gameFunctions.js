@@ -1,4 +1,6 @@
-'use strict';
+/* ============================================================================
+																Explorer Mode
+ ============================================================================ */
 /*
  * Returns the number 1 if the gameTypeString is 1 player and the number 2 if
  * the gameTypeString is 2 players. If the gameTypeString is invalid it should
@@ -25,6 +27,78 @@ function validateName(name) {
  * Randomly generates and returns a name for a computer player.
  */
 function generateComputerName() {
+
+}
+
+/*
+ * Validate a yes/no answer. If the yesNoString is 'y' or 'yes' then the
+ * function should return true. If the yesNoString is 'n' or 'no' then the
+ * function should return false. If the yesNoString is neither of those options
+ * then the function should return null. The function should be case
+ * insensitive, so it should accept both 'Y' and 'y' for example.
+ */
+function validateYesNo(yesNoString) {
+
+}
+
+/*
+ * Return the player (either 'X' or 'O') who should go next, based on the
+ * current player. If the currentPlayer is 'X' then the function should return
+ * 'O' and vice versa.
+ */
+function getNextPlayer(currentPlayer) {
+
+}
+
+/*
+ * Convert the gameBoard matrix to a string. You can use \n to denote a newline
+ * within a string. For a matrix like this:
+ * gameBoard = [
+ *     [' ', 'X', ' '],
+ *     [' ', ' ', ' '],
+ *     [' ', ' ', ' '],
+ * ]
+ * the resulting string should look like this:
+ *      1   2   3
+ *   ~~~~~~~~~~~~~
+ * 1 |   | X |   |
+ *   ~~~~~~~~~~~~~
+ * 2 |   |   |   |
+ *   ~~~~~~~~~~~~~
+ * 3 |   |   |   |
+ *   ~~~~~~~~~~~~~
+ */
+function getGameBoardString(gameBoard) {
+
+}
+
+/*
+ * Return the number of empty spaces that currently exist within the gameBoard
+ * matrix. This function should work regardless of the size of the game board.
+ * For example, the game board might be 3x3, 4x4, or 5x7.
+ */
+function getEmptySpaceCount(gameBoard) {
+
+}
+
+
+/* ============================================================================
+																Adventurer Mode
+ ============================================================================ */
+/*
+ * Given a playerString (either 'X' or 'O'), a moveObject and a gameBoard
+ * matrix, make the move on the gameBoard and return the gameBoard.
+ */
+function makeMove(playerString, moveObject, gameBoard) {
+
+}
+
+
+/*
+ * Determine and return the winning player (either 'X' or 'O') based on the
+ * gameBoard matrix. If there is no winner than the function should return null.
+ */
+function getWinner(gameBoard) {
 
 }
 
@@ -71,73 +145,9 @@ function validateMove(moveObject, gameBoard) {
 
 }
 
-/*
- * Convert the gameBoard matrix to a string. You can use \n to denote a newline
- * within a string. For a matrix like this:
- * gameBoard = [
- *     [' ', 'X', ' '],
- *     [' ', ' ', ' '],
- *     [' ', ' ', ' '],
- * ]
- * the resulting string should look like this:
- *      1   2   3
- *   ~~~~~~~~~~~~~
- * 1 |   | X |   |
- *   ~~~~~~~~~~~~~
- * 2 |   |   |   |
- *   ~~~~~~~~~~~~~
- * 3 |   |   |   |
- *   ~~~~~~~~~~~~~
- */
-function getGameBoardString(gameBoard) {
-
-}
-
-/*
- * Given a playerString (either 'X' or 'O'), a moveObject and a gameBoard
- * matrix, make the move on the gameBoard and return the gameBoard.
- */
-function makeMove(playerString, moveObject, gameBoard) {
-
-}
-
-/*
- * Return the number of empty spaces that currently exist within the gameBoard
- * matrix. This function should work regardless of the size of the game board.
- * For example, the game board might be 3x3, 4x4, or 5x7.
- */
-function getEmptySpaceCount(gameBoard) {
-
-}
-
-/*
- * Return the player (either 'X' or 'O') who should go next, based on the
- * current player. If the currentPlayer is 'X' then the function should return
- * 'O' and vice versa.
- */
-function getNextPlayer(currentPlayer) {
-
-}
-
-/*
- * Determine and return the winning player (either 'X' or 'O') based on the
- * gameBoard matrix. If there is no winner than the function should return null.
- */
-function getWinner(gameBoard) {
-	
-}
-
-/*
- * Validate a yes/no answer. If the yesNoString is 'y' or 'yes' then the
- * function should return true. If the yesNoString is 'n' or 'no' then the
- * function should return false. If the yesNoString is neither of those options
- * then the function should return null. The function should be case
- * insensitive, so it should accept both 'Y' and 'y' for example.
- */
-function validateYesNo(yesNoString) {
-
-}
-
+/* ============================================================================
+																Epic Mode
+ ============================================================================ */
 /*
  * Receives a player (either 'X' or 'O') and a game board. Returns the best move
  * for the chosen player based on the following algorithm:
@@ -189,9 +199,9 @@ function getComputerPlayerMove(player, gameBoard) {
 	return null;
 }
 
-/*
- * Don't mess with this code :)
- */
+/* ============================================================================
+															Don't mess with this code :)
+ ============================================================================ */
 module.exports = {
 	validateGameType: validateGameType,
 	validateName: validateName,
