@@ -11,7 +11,16 @@
  * result in true.
  */
 function validateGameType(gameTypeString) {
-
+	if (typeof gameTypeString !== 'string') {
+		return false;
+	}
+	if ((gameTypeString === '1') || (gameTypeString.toLowerCase() === 'one')) {
+		return 1;
+	}	else if ((gameTypeString === '2') || (gameTypeString.toLowerCase() === 'two')) {
+		return 2;
+	}	else {
+		return false;
+	}
 }
 
 /*
@@ -20,14 +29,25 @@ function validateGameType(gameTypeString) {
  * false if the name is not valid.
  */
 function validateName(name) {
-
+	if ((typeof name !== 'string') || (name.length === 0)) {
+    return false;
+	}
+	for (i=0; i < name.length; i++) {
+		if (!name.charAt(i).match(/[a-z\ \-]/i)){
+			return false;
+		} else {
+			return name;
+		}
+	}
 }
 
 /*
  * Randomly generates and returns a name for a computer player.
  */
 function generateComputerName() {
-
+	var computerName = ['Liam', 'Emma', 'Noah', 'Ethan', 'Olivia', 'Sophia'];
+	var namePicker = computerName[Math.floor(Math.random() * computerName.length)];
+		return namePicker;
 }
 
 /*
@@ -38,7 +58,13 @@ function generateComputerName() {
  * insensitive, so it should accept both 'Y' and 'y' for example.
  */
 function validateYesNo(yesNoString) {
-
+	if ((yesNoString.toLowerCase() === 'y') || (yesNoString.toLowerCase() === 'yes')) {
+		return true;
+	} else if ((yesNoString.toLowerCase() === 'n') || (yesNoString.toLowerCase() === 'no')) {
+		return false;
+	} else {
+		return null;
+	}
 }
 
 /*
@@ -47,7 +73,10 @@ function validateYesNo(yesNoString) {
  * 'O' and vice versa.
  */
 function getNextPlayer(currentPlayer) {
-
+	switch (currentPlayer) {
+		case 'O': return 'X'; break;
+		case 'X': return 'O'; break;
+	}
 }
 
 /*
@@ -69,7 +98,33 @@ function getNextPlayer(currentPlayer) {
  *   ~~~~~~~~~~~~~
  */
 function getGameBoardString(gameBoard) {
+var blankGameBoard = '     1   2   3 \n  ~~~~~~~~~~~~~\n1 | space00 | space01 | space02 |\n  ~~~~~~~~~~~~~\n2 | space10 | space11 | space12 |\n  ~~~~~~~~~~~~~\n3 | space20 | space21 | space22 |\n  ~~~~~~~~~~~~~\n';
+    for(var i=0; i<3; i++){
+        for (var j=0; j<3; j++){
+            var cell =('space'+i.toString()+j.toString());
+            if (gameBoard[i][j] === 'X'){
+                
+                blankGameBoard = blankGameBoard.replace(cell,'X');
+                
+            }
 
+            else if (gameBoard[i][j] === 'O'){
+                
+                blankGameBoard = blankGameBoard.replace(cell,'O');
+                
+            }
+
+            else if (gameBoard[i][j] === ' ') {
+                
+                blankGameBoard = blankGameBoard.replace(cell,' ');
+                
+            }
+
+
+
+        }
+    }
+    return  blankGameBoard;
 }
 
 /*
@@ -78,7 +133,19 @@ function getGameBoardString(gameBoard) {
  * For example, the game board might be 3x3, 4x4, or 5x7.
  */
 function getEmptySpaceCount(gameBoard) {
-
+	var counter = 0;
+	var emptySpace = ' ';
+	
+	for (var i=0; i<gameBoard.length; i++){
+        for (var j=0; j<gameBoard.length; j++){
+        	
+        	if (gameBoard[i][j] === emptySpace) {
+        		counter+=1;
+        		
+        	}	
+        }
+    }
+    return counter;
 }
 
 
