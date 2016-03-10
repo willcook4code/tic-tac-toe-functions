@@ -135,17 +135,18 @@ var blankGameBoard = '     1   2   3 \n  ~~~~~~~~~~~~~\n1 | space00 | space01 | 
 function getEmptySpaceCount(gameBoard) {
 	var counter = 0;
 	var emptySpace = ' ';
-	
-	for (var i=0; i<gameBoard.length; i++){
-        for (var j=0; j<gameBoard.length; j++){
+	gameBoard.unshift(emptySpace);
+	for (var x=0; x<gameBoard.length; x++){
+        for (var y=0; y<gameBoard.length; y++){
         	
-        	if (gameBoard[i][j] === emptySpace) {
+        	if (gameBoard[x][y] === emptySpace) {
         		counter+=1;
         		
         	}	
         }
     }
-    return counter;
+    return counter-1;
+
 }
 
 
